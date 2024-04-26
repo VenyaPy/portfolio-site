@@ -1,16 +1,24 @@
 import './App.css'
+import { useState } from 'react';
 import Header from "./components/Header.jsx";
+import About from "./components/About.jsx";
+import Projects from "./components/Projects.jsx";
+import Contact from "./components/Contact.jsx";
 
-function App() {
+export default function App() {
+  const [activeSection, setActiveSection] = useState('about');
 
   return (
     <>
-        <div className="container">
-        <Header></Header>
+      <div className="container">
+        <Header setActiveSection={setActiveSection} />
 
-        </div>
+        {activeSection === 'about' && <About />}
+        {activeSection === 'projects' && <Projects />}
+        {activeSection === 'contact' && <Contact />}
+      </div>
     </>
   )
 }
 
-export default App
+
