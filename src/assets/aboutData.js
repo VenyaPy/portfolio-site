@@ -3,7 +3,7 @@ const aboutData = {
     "https://i.ibb.co/9WWqfHg/123.jpg",
     "https://i.ibb.co/2yLmFZ3/333.jpg"
   ],
-  greeting: "Hi, I am Venya",
+  greeting: "Hi, I am Venya 👋",
   aboutMe: [
     "I am a Fullstack Developer, specializing in Backend Development.",
     "My journey began as a Content Manager, and I have since transitioned into a developer role."
