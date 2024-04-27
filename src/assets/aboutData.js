@@ -1,7 +1,8 @@
 const aboutData = {
   images: [
-    "https://i.ibb.co/9WWqfHg/123.jpg",
-    "https://i.ibb.co/2yLmFZ3/333.jpg"
+    "https://i.ibb.co/2yLmFZ3/333.jpg",
+    "https://i.ibb.co/9WWqfHg/123.jpg"
+
   ],
   greeting: "Hi, I am Venya 👋",
   aboutMe: [

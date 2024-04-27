@@ -1,15 +1,22 @@
 html {
-    font-size: 17px;
-    font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
 }
 
 body {
   margin: 0;
+  line-height: 1.5;
 }
 
+
 .container {
-  max-width: 70%;
-  margin: 0 auto;
+  max-width: 70%; /* увеличенная ширина контейнера для большего использования пространства */
+  margin: 2rem auto; /* добавлено верхнее и нижнее пространство */
+  background: #ffffff; /* фон для контента */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* тень вокруг контейнера */
+  padding: 2rem; /* внутренний отступ */
+  border-radius: 8px; /* скругление углов */
 }
 
 header {
@@ -17,8 +24,9 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 10px 20px;
-  border: 1px solid black;
+  border-bottom: 2px solid #eeeeee;
   margin-bottom: 5%;
+  margin-top: 1%;
 }
 
 
@@ -26,6 +34,7 @@ header {
   flex: 1;
   font-weight: bold;
   font-size: 2rem;
+
 }
 
 .sections {
@@ -46,6 +55,13 @@ header {
 .sections li {
   margin-right: 20px;
   cursor: pointer;
+  white-space: nowrap;
+}
+
+.sections li:not(:last-child):after {
+  content: "|";
+  color: #dddddd;
+  margin-left: 20px; /* разделительные линии между пунктами навигации */
 }
 
 
@@ -72,60 +88,66 @@ header {
 
 
 .dark-mode {
+  /* Стили для темной темы */
   background-color: #121212; /* Темный фон для всей страницы */
   color: #ffffff; /* Ярко-белый текст для лучшего контраста и читаемости */
 }
 
-.dark-mode .light {
-  filter: invert(100%);
+.dark-mode body {
+  background-color: #121212; /* Темный фон теперь применяется ко всему body, а не только к .container */
 }
-
-.dark-mode .photo {
-    border: 0 solid #ffffff;
-}
-
 
 .dark-mode header {
-  border-color: #333333; /* Граница слегка отличается от фона */
+  border-color: #2e2e2e; /* Подправленный цвет границы под header */
+  /* Остальные стили для header... */
 }
 
-.dark-mode .logo, .dark-mode .sections li {
-  color: #ffffff; /* Белый текст для лого и навигации */
+.dark-mode .container {
+  background: #1e1e1e; /* Немного светлее, чтобы контейнер выделялся на общем фоне */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Светлая тень для контейнера в темной теме */
+}
+
+.dark-mode .light {
+  filter: invert(1); /* Инверсия иконки на светлую версию в темной теме */
+}
+
+/* Подправим цвета для элементов в темной теме */
+.dark-mode a, .dark-mode .sections li, .dark-mode .content h2, .dark-mode .content h3, .dark-mode .description h3 {
+  color: #ffffff; /* Установить белый цвет текста для элементов в темной теме */
+}
+
+.dark-mode .sections li:not(:last-child):after {
+  color: #525252; /* Светлый разделитель в темной теме для видимости */
 }
 
 .dark-mode .project {
-  background: #1e1e1e; /* Чуть более светлый оттенок черного для фона карточек */
-  border-color: #333333; /* Темно-серая граница для карточек */
-  color: #ffffff; /* Ярко-белый текст для карточек */
+  background: #2e2e2e; /* Темный фон для карточек */
+  color: #ffffff; /* Светлый текст для карточек */
+  border: 1px solid #3a3a3a; /* Светлый оттенок для границы карточек */
 }
 
+/* Стили для описания проектов в темной теме */
 .dark-mode .description {
-  background: #262626; /* Еще более темный серый для фона описаний внутри карточек */
-  color: #ffffff; /* Белый текст внутри описаний для читаемости */
+  background: #262626; /* Фон описания внутри карточек */
+  color: #cfcfcf; /* Цвет текста описания */
+  /* Остальные стили для .description... */
 }
 
-.dark-mode .description h3 {
-  margin-top: 0; /* Убирает верхний отступ у заголовка */
-  color: #ffffff; /* Цвет заголовка */
+.dark-mode .description p, .dark-mode .about-me p, .dark-mode .tech-stack p {
+  color: #b5b5b5; /* Светлый текст для параграфов в темной теме */
 }
 
-.dark-mode .description p {
-  color: #b5b5b5; /* Цвет текста описания */
-  line-height: 1.6; /* Межстрочный интервал */
+.dark-mode .contact-container a {
+  color: #4a90e2; /* Установить яркий цвет для ссылок в темной теме */
 }
 
+.dark-mode .contact-container a:hover {
+  text-decoration: underline; /* Подчеркивание при наведении для ссылок в темной теме */
+}
+
+/* Теперь тень для .project в темной теме */
 .dark-mode .project:hover {
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.05); /* Тень для эффекта наведения, со светлым оттенком */
-}
-
-.dark-mode .about-me p {
-  color: #ffffff; /* Цвет текста */
-  font-size: 1rem;
-}
-
-.dark-mode .tech-stack p {
-  color: #ffffff; /* Цвет текста */
-  font-size: 1rem;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1); /* Тень с более светлым оттенком в темной теме */
 }
 
 
@@ -139,6 +161,7 @@ header {
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
+    margin-bottom: 10%;
 }
 
 .photo-container {
@@ -188,6 +211,7 @@ a {
   gap: 20px; /* Расстояние между карточками */
   padding: 20px;
   justify-content: center;
+    margin-bottom: 20%;
 }
 
 .project {
@@ -225,22 +249,23 @@ a {
 }
 
 .contact-container {
-
-
   padding: 20px;
   max-width: 600px; /* Or as per your layout */
   margin: 0 auto; /* Center the container */
+
 }
 
 .contact-item {
   display: flex;
   align-items: center;
   margin-bottom: 0.5em;
+  text-align: center;
+  justify-content: center;
 }
 
 .contact-item img {
-  width: 24px; /* or the size you prefer */
-  height: 24px; /* or the size you prefer */
+  width: 24px;
+  height: 24px;
   margin-right: 10px;
 }
 
@@ -250,18 +275,102 @@ a {
 }
 
 .contact-container p {
-  font-size: 1.1em; /* Larger text for better readability */
+  font-size: 1.1em;
   margin-bottom: 0.5em;
 }
 
+.contact-container span {
+  margin-right: 1%;
+}
+
 .contact-container a {
-  color: #4a90e2; /* A color that stands out */
-  text-decoration: none; /* No underlines */
-  font-weight: bold; /* Make links bold */
-  /* ... other styles ... */
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .contact-container a:hover {
-  text-decoration: underline; /* Reintroduce underline on hover */
-  /* ... other styles ... */
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 15px; /* Меньший размер шрифта для мобильных устройств */
+    }
+
+    .container {
+        max-width: 100%; /* Использование всей доступной ширины */
+        padding: 1.5rem; /* Увеличение внутренних отступов для большей "дышащей" способности */
+        margin: 1.5rem auto; /* Увеличение вертикальных отступов для лучшего визуального разделения */
+        border-radius: 8px; /* Увеличение радиуса скругления для более мягкого внешнего вида */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Модификация тени для добавления глубины */
+        min-width: 280px; /* Минимальная ширина для избежания слишком узкого вида */
+    }
+
+    header {
+        flex-direction: column; /* Элементы header теперь расположены вертикально */
+        padding: 0.5rem;
+        gap: 10px; /* Добавление пространства между элементами в header */
+    }
+
+    .logo, .clock, .sections {
+        flex-basis: 100%; /* Оба элемента занимают всю ширину */
+        justify-content: center; /* Центрирование элементов */
+        margin-bottom: 10px;
+        text-align: center; /* Центрирование текста */
+    }
+
+    .sections ul {
+        flex-direction: column; /* Навигационные ссылки теперь вертикально */
+        align-items: center; /* Центрирование элементов списка */
+    }
+
+    .sections li {
+        margin-right: 0; /* Удаление правого отступа */
+        margin-bottom: 0.5rem; /* Добавление нижнего отступа для разделения элементов */
+    }
+
+    .sections li:not(:last-child):after {
+        display: none; /* Убрать разделители, так как элементы теперь вертикальные */
+    }
+
+    .photo {
+        width: 50vw; /* Ширина 50% от ширины вьюпорта */
+        height: 50vw; /* Высота также 50% от ширины вьюпорта, чтобы сохранить пропорции круга */
+        border-radius: 50%; /* Сохранение круглой формы */
+        object-fit: cover; /* Убедиться, что изображение полностью покрывает элемент без искажения */
+        margin: 0 auto; /* Центрирование фотографии */
+        display: block;
+    }
+
+    .main, .photo-container {
+        flex-direction: column; /* Все главные разделы теперь вертикальные */
+    }
+
+    .content {
+        max-width: 90%; /* Увеличение ширины текстового контента */
+        padding: 0.5rem;
+        margin: 0 auto; /* Центрирование контента */
+    }
+
+    .projects-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Создание сетки с динамическим количеством колонок */
+        gap: 10px; /* Расстояние между карточками проектов */
+    }
+
+  .project {
+        padding: 10px; /* Увеличение внутренних отступов для лучшей визуальной изоляции текста */
+        overflow: hidden; /* Обеспечивает, что все внутри блока останется в пределах его границ */
+        text-overflow: ellipsis; /* Добавляет многоточие, если текст не умещается в одну строку */
+        word-wrap: break-word; /* Позволяет словам переноситься, предотвращая выход текста за пределы блока */
+    }
+
+    .description {
+        font-size: 0.8rem; /* Уменьшение размера шрифта для более компактного размещения текста */
+        line-height: 1.2; /* Уменьшение межстрочного интервала для экономии вертикального пространства */
+    }
+
+    .project h3, .project p {
+        margin: 5px 0; /* Уменьшение верхнего и нижнего отступов для заголовков и параграфов */
+    }
 }
