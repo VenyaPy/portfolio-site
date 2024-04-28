@@ -112,6 +112,13 @@ header {
   filter: invert(1); /* Инверсия иконки на светлую версию в темной теме */
 }
 
+.dark-mode .capcha {
+    background-color: #333; /* Темный фон */
+    padding: 10px;
+    border-radius: 8px;
+}
+
+
 /* Подправим цвета для элементов в темной теме */
 .dark-mode a, .dark-mode .sections li, .dark-mode .content h2, .dark-mode .content h3, .dark-mode .description h3 {
   color: #ffffff; /* Установить белый цвет текста для элементов в темной теме */
@@ -440,6 +447,10 @@ a {
     background-color: #45a049;
 }
 
+.capcha {
+    margin-top: 2%;
+    margin-bottom: 3%;
+}
 
 @media (max-width: 768px) {
     html {
@@ -506,6 +517,8 @@ a {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Создание сетки с динамическим количеством колонок */
         gap: 10px; /* Расстояние между карточками проектов */
     }
+
+
 
   .project {
       height: 400px;

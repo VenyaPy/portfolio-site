@@ -1,9 +1,12 @@
 from flask import Blueprint, request, jsonify
 from backend.app.database.models import db, Reviews  # Убедитесь, что путь импорта адаптирован к вашей структуре проекта
 from flask_cors import CORS
+import requests
 
 reviews_bp = Blueprint('reviews', __name__)
 CORS(reviews_bp)
+
+RECAPTCHA_SECRET_KEY = '6LeIK8opAAAAAAA2cS848SRn_WXBZ0BilTDEGXZJ'
 
 
 @reviews_bp.route('/post_review', methods=['POST'])
@@ -11,10 +14,25 @@ def review_post():
     try:
         if request.is_json:
             data = request.get_json()
+            recaptcha_token = data.get('recaptcha', None)
+
+            if not recaptcha_token:
+                return jsonify({"error": "reCAPTCHA token is missing"}), 400
+
+            # Проверяем reCAPTCHA token
+            recaptcha_response = requests.post(
+                'https://www.google.com/recaptcha/api/siteverify',
+                data={'secret': RECAPTCHA_SECRET_KEY, 'response': recaptcha_token}
+            ).json()
+
+            if not recaptcha_response.get('success'):
+                return jsonify({"error": "Invalid reCAPTCHA. Please try again."}), 400
+
+            # Если reCAPTCHA прошла успешно, добавляем отзыв
             new_review = Reviews(
                 username=data.get('username'),
                 text=data.get('text'),
-                img=data.get('img', None)  # Проверьте, что передаётся img
+                img=data.get('img', None)
             )
             db.session.add(new_review)
             db.session.commit()
