@@ -11,6 +11,7 @@ body {
 
 
 .container {
+    min-height: 1000px;
   max-width: 70%; /* увеличенная ширина контейнера для большего использования пространства */
   margin: 2rem auto; /* добавлено верхнее и нижнее пространство */
   background: #ffffff; /* фон для контента */
@@ -89,16 +90,16 @@ header {
 
 .dark-mode {
   /* Стили для темной темы */
-  background-color: #121212; /* Темный фон для всей страницы */
+  background-color: #191919; /* Темный фон для всей страницы */
   color: #ffffff; /* Ярко-белый текст для лучшего контраста и читаемости */
 }
 
 .dark-mode body {
-  background-color: #121212; /* Темный фон теперь применяется ко всему body, а не только к .container */
+  background-color: #1B1B1BFF; /* Темный фон теперь применяется ко всему body, а не только к .container */
 }
 
 .dark-mode header {
-  border-color: #2e2e2e; /* Подправленный цвет границы под header */
+  border-color: #191919; /* Подправленный цвет границы под header */
   /* Остальные стили для header... */
 }
 
@@ -123,12 +124,12 @@ header {
 .dark-mode .project {
   background: #2e2e2e; /* Темный фон для карточек */
   color: #ffffff; /* Светлый текст для карточек */
-  border: 1px solid #3a3a3a; /* Светлый оттенок для границы карточек */
+  border: 1px solid #2e2e2e; /* Светлый оттенок для границы карточек */
 }
 
 /* Стили для описания проектов в темной теме */
 .dark-mode .description {
-  background: #262626; /* Фон описания внутри карточек */
+  background: #2e2e2e; /* Фон описания внутри карточек */
   color: #cfcfcf; /* Цвет текста описания */
   /* Остальные стили для .description... */
 }
@@ -150,6 +151,61 @@ header {
   box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1); /* Тень с более светлым оттенком в темной теме */
 }
 
+.dark-mode .reviews-container {
+    background-color: #1e1e1e; /* Темный фон для контейнера */
+    color: #ffffff; /* Белый текст для контраста */
+    border-color: #333333; /* Темный цвет границы */
+}
+
+/* Темные стили для заголовков внутри контейнера */
+.dark-mode .reviews-title {
+    color: #ffffff; /* Белый цвет для заголовка */
+}
+
+/* Темные стили для списка отзывов */
+.dark-mode .reviews-list {
+    /* По желанию, здесь могут быть добавлены стили для списка, если требуется */
+}
+
+/* Темные стили для элемента списка отзывов */
+.dark-mode .reviews-item {
+    background-color: #262626; /* Чуть светлее, чем фон контейнера */
+    border-color: #333333; /* Темная граница для элементов списка */
+}
+
+/* Темные стили для текста отзыва */
+.dark-mode .review-text {
+    color: #cccccc; /* Светло-серый текст для лучшей читаемости */
+}
+
+/* Темные стили для изображений в отзывах */
+.dark-mode .review-img {
+    border-color: #424242; /* Темная граница вокруг изображений */
+}
+
+/* Темные стили для формы отзывов */
+.dark-mode .reviews-form {
+    background-color: #2e2e2e; /* Темный фон для формы */
+    border-color: #333333; /* Темная граница формы */
+}
+
+/* Темные стили для полей ввода и текстового поля */
+.dark-mode .reviews-input, .dark-mode .reviews-textarea {
+    background-color: #333333; /* Темный фон для полей ввода */
+    color: #ffffff; /* Белый текст */
+    border-color: #444444; /* Светлее, чем фон, граница */
+}
+
+/* Темные стили для кнопок */
+.dark-mode .reviews-submit-button {
+    background-color: #4CAF50; /* Зеленый фон для кнопки */
+    color: #ffffff; /* Белый текст */
+}
+
+.dark-mode .reviews-submit-button:hover {
+    background-color: #45a049; /* Темно-зеленый при наведении */
+}
+
 
 
 
@@ -161,7 +217,7 @@ header {
   flex-wrap: wrap;
   gap: 20px;
   padding: 20px;
-    margin-bottom: 10%;
+  margin-bottom: 10%;
 }
 
 .photo-container {
@@ -215,6 +271,7 @@ a {
 }
 
 .project {
+    height: 550px;
   background: #fff; /* Фон карточки */
   border: 1px solid #e1e1e1; /* Тонкая граница для контура */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Тень для создания эффекта "всплывания" */
@@ -293,6 +350,97 @@ a {
   text-decoration: underline;
 }
 
+
+
+/* Стили контейнера для отзывов */
+.reviews-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Заголовок для списка отзывов */
+.reviews-title {
+    color: #333;
+    font-size: 24px;
+}
+
+/* Список отзывов с классом для элементов */
+.reviews-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.reviews-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+/* Стиль для блока каждого отзыва */
+.review-header {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.review-date {
+    font-size: 14px;
+    color: #666;
+}
+
+.review-text {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #333;
+}
+
+.review-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-top: 10px;
+}
+
+/* Стилизация формы добавления отзыва */
+.reviews-form {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.reviews-input, .reviews-textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.reviews-submit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.reviews-submit-button:hover {
+    background-color: #45a049;
+}
+
+
 @media (max-width: 768px) {
     html {
         font-size: 15px; /* Меньший размер шрифта для мобильных устройств */
@@ -354,11 +502,13 @@ a {
     }
 
     .projects-container {
+
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Создание сетки с динамическим количеством колонок */
         gap: 10px; /* Расстояние между карточками проектов */
     }
 
   .project {
+      height: 400px;
         padding: 10px; /* Увеличение внутренних отступов для лучшей визуальной изоляции текста */
         overflow: hidden; /* Обеспечивает, что все внутри блока останется в пределах его границ */
         text-overflow: ellipsis; /* Добавляет многоточие, если текст не умещается в одну строку */

@@ -26,14 +26,15 @@ export default function Header({ setActiveSection }) {
       <header>
         <div className="logo">VenyaPy</div>
         <div className="sections">
-          <ul>
-            <li className="section" onClick={() => setActiveSection('about')}>Обо мне</li>
-            <li className="section" onClick={() => setActiveSection('projects')}>Мои проекты</li>
-            <li className="section" onClick={() => setActiveSection('contact')}>Связаться</li>
-          </ul>
+            <ul>
+                <li className="section" onClick={() => setActiveSection('about')}>Обо мне</li>
+                <li className="section" onClick={() => setActiveSection('projects')}>Мои проекты</li>
+                <li className="section" onClick={() => setActiveSection('reviews')}>Отзывы</li>
+                <li className="section" onClick={() => setActiveSection('contact')}>Связаться</li>
+            </ul>
         </div>
-        <div className="clock">{time.toLocaleTimeString()}
-          <img src="https://i.ibb.co/TKH2bB6/free-icon-contrast-475980.png" alt="free-icon-contrast-475980"
+          <div className="clock">{time.toLocaleTimeString()}
+              <img src="https://i.ibb.co/TKH2bB6/free-icon-contrast-475980.png" alt="free-icon-contrast-475980"
                className="light" onClick={toggleDarkMode}/>
         </div>
 
