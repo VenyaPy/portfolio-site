@@ -1,12 +1,12 @@
 from flask import Blueprint, request, jsonify
-from backend.app.database.models import db, Reviews  # Убедитесь, что путь импорта адаптирован к вашей структуре проекта
+
+from backend.app.config import RECAPTCHA_SECRET_KEY
+from backend.app.database.models import db, Reviews
 from flask_cors import CORS
 import requests
 
 reviews_bp = Blueprint('reviews', __name__)
 CORS(reviews_bp)
-
-RECAPTCHA_SECRET_KEY = '6LeIK8opAAAAAAA2cS848SRn_WXBZ0BilTDEGXZJ'
 
 
 @reviews_bp.route('/post_review', methods=['POST'])
@@ -28,7 +28,6 @@ def review_post():
             if not recaptcha_response.get('success'):
                 return jsonify({"error": "Invalid reCAPTCHA. Please try again."}), 400
 
-            # Если reCAPTCHA прошла успешно, добавляем отзыв
             new_review = Reviews(
                 username=data.get('username'),
                 text=data.get('text'),

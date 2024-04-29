@@ -116,6 +116,7 @@ header {
     background-color: #333; /* Темный фон */
     padding: 10px;
     border-radius: 8px;
+    filter: brightness(0.9) contrast(0.9);
 }
 
 
@@ -454,7 +455,7 @@ a {
 
 @media (max-width: 768px) {
     html {
-        font-size: 15px; /* Меньший размер шрифта для мобильных устройств */
+        font-size: 17px; /* Меньший размер шрифта для мобильных устройств */
     }
 
     .container {
@@ -477,6 +478,12 @@ a {
         justify-content: center; /* Центрирование элементов */
         margin-bottom: 10px;
         text-align: center; /* Центрирование текста */
+    }
+
+    .light {
+        width: 4%;
+        justify-content: center;
+        align-content: center;
     }
 
     .sections ul {
@@ -521,7 +528,7 @@ a {
 
 
   .project {
-      height: 400px;
+      height: 450px;
         padding: 10px; /* Увеличение внутренних отступов для лучшей визуальной изоляции текста */
         overflow: hidden; /* Обеспечивает, что все внутри блока останется в пределах его границ */
         text-overflow: ellipsis; /* Добавляет многоточие, если текст не умещается в одну строку */
@@ -529,7 +536,7 @@ a {
     }
 
     .description {
-        font-size: 0.8rem; /* Уменьшение размера шрифта для более компактного размещения текста */
+        font-size: 0.9rem; /* Уменьшение размера шрифта для более компактного размещения текста */
         line-height: 1.2; /* Уменьшение межстрочного интервала для экономии вертикального пространства */
     }
 
