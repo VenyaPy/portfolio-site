@@ -521,7 +521,7 @@ a {
 
     .projects-container {
 
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Создание сетки с динамическим количеством колонок */
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Создание сетки с динамическим количеством колонок */
         gap: 10px; /* Расстояние между карточками проектов */
     }
 
@@ -543,4 +543,5 @@ a {
     .project h3, .project p {
         margin: 5px 0; /* Уменьшение верхнего и нижнего отступов для заголовков и параграфов */
     }
+
 }
