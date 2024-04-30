@@ -20,6 +20,8 @@ body {
   border-radius: 8px; /* скругление углов */
 }
 
+
+
 header {
   display: flex;
   align-items: center;
@@ -80,11 +82,13 @@ header {
 }
 
 .light {
-  width: 3%;
   height: auto;
+  align-items: center;
   margin-left: 2%;
   cursor: pointer;
+    width: 15px;
 }
+
 
 
 
@@ -267,7 +271,9 @@ a {
   text-decoration: none; /* Убирает подчеркивание у всех ссылок */
 }
 
-
+.reviews-title {
+        text-align: center;
+    }
 
 .projects-container {
   display: grid;
@@ -453,23 +459,28 @@ a {
     margin-bottom: 3%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
     html {
         font-size: 17px; /* Меньший размер шрифта для мобильных устройств */
     }
 
     .container {
-        max-width: 100%; /* Использование всей доступной ширины */
-        padding: 1.5rem; /* Увеличение внутренних отступов для большей "дышащей" способности */
-        margin: 1.5rem auto; /* Увеличение вертикальных отступов для лучшего визуального разделения */
-        border-radius: 8px; /* Увеличение радиуса скругления для более мягкого внешнего вида */
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Модификация тени для добавления глубины */
-        min-width: 280px; /* Минимальная ширина для избежания слишком узкого вида */
+        max-width: 100%; /* Увеличение ширины до 100% */
+    margin: 0; /* Удаление верхних и боковых отступов */
+    padding: 0; /* Уменьшение внутренних отступов */
+    border-radius: 0; /* Убираем скругление углов */
+    }
+
+    .main {
+        margin-bottom: 0;
     }
 
     header {
         flex-direction: column; /* Элементы header теперь расположены вертикально */
-        padding: 0.5rem;
+        padding-top: 30px;
+        padding-bottom: 3%;
+        margin-top: 0;
+        border-bottom: 1px solid #eeeeee;
         gap: 10px; /* Добавление пространства между элементами в header */
     }
 
@@ -477,13 +488,12 @@ a {
         flex-basis: 100%; /* Оба элемента занимают всю ширину */
         justify-content: center; /* Центрирование элементов */
         margin-bottom: 10px;
+        align-items: center;
         text-align: center; /* Центрирование текста */
     }
 
     .light {
-        width: 4%;
-        justify-content: center;
-        align-content: center;
+        margin-left: 10%;
     }
 
     .sections ul {
@@ -525,10 +535,28 @@ a {
         gap: 10px; /* Расстояние между карточками проектов */
     }
 
+    .reviews-container {
+        border: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .reviews-title {
+        text-align: center;
+        padding-bottom: 2%;
+        margin-top: 0;
+        margin-bottom: 8%;
+    }
+
+    .reviews-form {
+        margin-top: 12%;
+    }
+
+
 
 
   .project {
-      height: 450px;
+      height: 500px;
         padding: 10px; /* Увеличение внутренних отступов для лучшей визуальной изоляции текста */
         overflow: hidden; /* Обеспечивает, что все внутри блока останется в пределах его границ */
         text-overflow: ellipsis; /* Добавляет многоточие, если текст не умещается в одну строку */
