@@ -1,93 +1,171 @@
-html {
-  font-size: 17px;
-  font-family: 'Montserrat', sans-serif;
-  color: #333;
+/* Стили для экранов с разрешением более 2000px */
+@media (min-width: 2000px) {
+    html {
+        font-size: 17px; /* Размер шрифта для крупных экранов */
+        font-family: 'Montserrat', sans-serif; /* Шрифт для всей страницы */
+        color: #333; /* Цвет текста */
+    }
+
+    .container {
+        min-height: 1000px; /* Минимальная высота контейнера */
+        max-width: 70%; /* Максимальная ширина контейнера */
+        margin: 2rem auto; /* Отступы сверху и снизу, центрирование */
+        background: #ffffff; /* Фон контейнера */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень вокруг контейнера */
+        padding: 2rem; /* Внутренние отступы */
+        border-radius: 8px; /* Скруглённые углы */
+    }
+
+    .main {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 20px;
+          padding: 20px;
+          margin-bottom: 10%;
+        }
 }
+
+/* Стили для экранов с разрешением до 2000px */
+@media (max-width: 2000px) {
+    html {
+        font-size: 15.5px; /* Размер шрифта для меньших экранов */
+        font-family: 'Montserrat', sans-serif; /* Шрифт для всей страницы */
+        color: #333; /* Цвет текста */
+    }
+
+    .container {
+        min-height: 800px; /* Минимальная высота контейнера */
+        max-width: 75%; /* Максимальная ширина контейнера */
+        margin: 2rem auto; /* Отступы сверху и снизу, центрирование */
+        background: #ffffff; /* Фон контейнера */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень вокруг контейнера */
+        padding: 2rem; /* Внутренние отступы */
+        border-radius: 8px; /* Скруглённые углы */
+    }
+
+    .main {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      margin-bottom: 5%;
+    }
+}
+
+
 
 body {
-  margin: 0;
-  line-height: 1.5;
-}
-
-
-.container {
-    min-height: 1000px;
-  max-width: 70%; /* увеличенная ширина контейнера для большего использования пространства */
-  margin: 2rem auto; /* добавлено верхнее и нижнее пространство */
-  background: #ffffff; /* фон для контента */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* тень вокруг контейнера */
-  padding: 2rem; /* внутренний отступ */
-  border-radius: 8px; /* скругление углов */
-}
+      margin: 0;
+      line-height: 1.5;
+    }
 
 
 
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  border-bottom: 2px solid #eeeeee;
-  margin-bottom: 5%;
-  margin-top: 1%;
-}
+    display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border-bottom: 2px solid #eeeeee;
+      margin-bottom: 5%;
+      margin-top: 1%;
+    }
 
 
 .logo {
-  flex: 1;
-  font-weight: bold;
-  font-size: 2rem;
+      flex: 1;
+      font-weight: bold;
+      font-size: 2rem;
 
-}
+    }
 
 .sections {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
-}
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+    }
 
 .sections ul {
-  display: flex;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
+      display: flex;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
 
 
 .sections li {
-  margin-right: 20px;
-  cursor: pointer;
-  white-space: nowrap;
+      margin-right: 20px;
+      cursor: pointer;
+      white-space: nowrap;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+.sections li:hover {
+    color: #252525;
+    transform: scale(1.1);
 }
 
+.sections li::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300%; /* Большой размер для полного покрытия кнопки */
+      height: 300%;
+
+      border-radius: 50%;
+      transition: transform 0.5s, opacity 0.3s;
+      transform: scale(0);
+      opacity: 0;
+      z-index: -1;
+    }
+
 .sections li:not(:last-child):after {
-  content: "|";
-  color: #dddddd;
-  margin-left: 20px; /* разделительные линии между пунктами навигации */
-}
+      content: "|";
+      margin-left: 20px; /* разделительные линии между пунктами навигации */
+    }
+
+.sections li:hover::before {
+      transform: scale(1);
+      opacity: 1;
+      transition: transform 0.5s, opacity 0.5s;
+    }
 
 
 .sections li:last-child {
-  margin-right: 0;
-  cursor: pointer;
-}
+      margin-right: 0;
+      cursor: pointer;
+    }
+
+.sections li:not(:last-child):after {
+      content: '';
+      margin: 0;
+    }
 
 .clock {
-  flex: 1;
-  text-align: right;
-  display: flex; /* Применить flex к контейнеру с часами и иконкой */
-  align-items: center; /* Выровнять элементы по центру по вертикали */
-  justify-content: flex-end; /* Выровнять элементы по правому краю */
-}
+      flex: 1;
+      text-align: right;
+      display: flex; /* Применить flex к контейнеру с часами и иконкой */
+      align-items: center; /* Выровнять элементы по центру по вертикали */
+      justify-content: flex-end; /* Выровнять элементы по правому краю */
+    }
 
 .light {
-  height: auto;
-  align-items: center;
-  margin-left: 2%;
-  cursor: pointer;
-    width: 15px;
-}
+      height: auto;
+      align-items: center;
+      margin-left: 2%;
+      cursor: pointer;
+        width: 15px;
+    }
 
 
 
@@ -150,12 +228,32 @@ header {
   color: #b5b5b5; /* Светлый текст для параграфов в темной теме */
 }
 
+.dark-mode .contact-container {
+  background: #222; /* Темный фон для контейнера */
+  color: #ccc; /* Светло-серый текст для лучшей читаемости на темном фоне */
+}
+
 .dark-mode .contact-container a {
-  color: #4a90e2; /* Установить яркий цвет для ссылок в темной теме */
+  color: #ff8c00; /* Ярко-оранжевый цвет для ссылок, хорошо виден на темном фоне */
+  transition: color 0.3s; /* Плавное изменение цвета при наведении */
 }
 
 .dark-mode .contact-container a:hover {
-  text-decoration: underline; /* Подчеркивание при наведении для ссылок в темной теме */
+  color: #ffa500; /* Светлый оранжевый цвет при наведении для улучшенной видимости */
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.dark-mode .contact-item img {
+  filter: brightness(0.8); /* Уменьшение яркости изображений, чтобы они были менее броскими */
+
+}
+
+.dark-mode .contact-item {
+  border-bottom: 1px solid #444; /* Темно-серая линия под каждым контактом */
+}
+
+.dark-mode .contact-container h1 {
+  color: #fff; /* Белый цвет заголовков для контрастности */
 }
 
 /* Теперь тень для .project в темной теме */
@@ -219,18 +317,6 @@ header {
 }
 
 
-
-
-.main {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  margin-bottom: 10%;
-}
 
 .photo-container {
   display: flex; /* Используйте flex-режим для контейнера */
@@ -320,48 +406,62 @@ a {
 }
 
 .contact-container {
-  padding: 20px;
-  max-width: 600px; /* Or as per your layout */
-  margin: 0 auto; /* Center the container */
-
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: #f9f9f9; /* Светлый фон для контейнера */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Тень для современного "поднятого" вида */
+  border-radius: 15px; /* Скругленные углы для эстетики */
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  margin-bottom: 0.5em;
+  margin-bottom: 1.5em;
   text-align: center;
-  justify-content: center;
+  justify-content: flex-start; /* Распределение содержимого слева направо */
+  padding: 10px;
+  border-bottom: 1px solid #eee; /* Легкая линия под каждым контактом */
+}
+
+.contact-item:last-child {
+  border-bottom: none; /* Убрать линию у последнего элемента */
 }
 
 .contact-item img {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
+  width: 40px; /* Увеличенный размер для лучшего восприятия */
+  height: 40px;
+  margin-right: 20px; /* Увеличенный отступ для визуального разделения */
+  filter: grayscale(100%); /* Черно-белый фильтр для стильного вида */
+  transition: filter 0.3s; /* Плавное возвращение цвета при наведении */
+}
+
+.contact-item img:hover {
+  filter: grayscale(0); /* Возвращение цвета при наведении */
 }
 
 .contact-container h1 {
   text-align: center;
-  margin-bottom: 1.5em;
-}
-
-.contact-container p {
-  font-size: 1.1em;
-  margin-bottom: 0.5em;
-}
-
-.contact-container span {
-  margin-right: 1%;
+  margin-bottom: 2em;
+  font-size: 2em;
+  color: #333;
 }
 
 .contact-container a {
-  color: #4a90e2;
+  color: #0077cc; /* Яркий цвет для ссылок */
   text-decoration: none;
-  font-weight: bold;
+  transition: color 0.3s; /* Плавное изменение цвета при наведении */
 }
 
 .contact-container a:hover {
-  text-decoration: underline;
+  color: #005fa3; /* Темнее при наведении */
+  text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.contact-container span {
+  font-weight: 600; /* Более жирный шрифт для названия контактов */
+  color: #555; /* Темно-серый цвет текста для лучшей читаемости */
+    margin-right: 2%;
 }
 
 
@@ -381,6 +481,7 @@ a {
 .reviews-title {
     color: #333;
     font-size: 24px;
+    margin-bottom: 5%;
 }
 
 /* Список отзывов с классом для элементов */
@@ -459,7 +560,7 @@ a {
     margin-bottom: 3%;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1500px) {
     html {
         font-size: 17px; /* Меньший размер шрифта для мобильных устройств */
     }
