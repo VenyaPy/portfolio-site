@@ -16,7 +16,7 @@ export default function Contact() {
             </div>
             <div className="contact-item">
                 <img src="https://i.ibb.co/rQVfNWJ/free-icon-github-733553.png" alt="GitHub" />
-                <span>GitHub: </span> <a href="https://github.com/VenyaPy" target="_blank">https://github.com/VenyaPy</a>
+                <span>GitHub: </span> <a href="https://vk.cc/cvwRUs" target="_blank">https://vk.cc/cvwRUs</a>
             </div>
         </div>
     )
