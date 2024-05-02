@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
+import './Header.css'
 
 export default function Header({ setActiveSection }) {
   const [time, setTime] = useState(new Date());

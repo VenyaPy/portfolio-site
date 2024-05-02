@@ -1,0 +1,150 @@
+.reviews-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.reviews-title {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.reviews-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.reviews-item {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.review-header {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0056b3;
+}
+
+.review-date {
+    font-size: 14px;
+    color: #666;
+}
+
+.review-text {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #333;
+}
+
+.review-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin-top: 10px;
+}
+
+.reviews-form {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.reviews-input, .reviews-textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.reviews-submit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.reviews-submit-button:hover {
+    background-color: #45a049;
+}
+
+
+
+.dark-mode .reviews-container {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-color: #333333;
+}
+
+.dark-mode .reviews-title {
+    color: #ffffff;
+}
+
+.dark-mode .reviews-item {
+    background-color: #262626;
+    border-color: #333333;
+}
+
+.dark-mode .review-text {
+    color: #cccccc;
+}
+
+.dark-mode .review-img {
+    border-color: #424242;
+}
+
+.dark-mode .reviews-form {
+    background-color: #2e2e2e;
+    border-color: #333333;
+}
+
+.dark-mode .reviews-input, .dark-mode .reviews-textarea {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #444444;
+}
+
+.dark-mode .reviews-submit-button {
+    background-color: #4CAF50;
+    color: #ffffff;
+}
+
+.dark-mode .reviews-submit-button:hover {
+    background-color: #45a049;
+}
+
+
+
+@media (max-width: 1500px) {
+    .reviews-container {
+        border: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .reviews-title {
+        text-align: center;
+        padding-bottom: 2%;
+        margin-top: 0;
+        margin-bottom: 8%;
+    }
+
+    .reviews-form {
+        margin-top: 12%;
+    }
+}

@@ -1,4 +1,5 @@
-import projectsData from "../assets/projectsData.js";
+import projectsData from "../../assets/Data/projectsData.js";
+import './Projects.css'
 
 export default function Projects() {
   return (

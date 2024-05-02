@@ -1,0 +1,149 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom: 2px solid #eeeeee;
+    margin-bottom: 5%;
+    margin-top: 1%;
+}
+
+.logo {
+    flex: 1;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.sections {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.sections ul {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sections li {
+    margin-right: 20px;
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.sections li:hover {
+    color: #252525;
+    transform: scale(1.1);
+}
+
+.sections li::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+
+    border-radius: 50%;
+    transition: transform 0.5s, opacity 0.3s;
+    transform: scale(0);
+    opacity: 0;
+    z-index: -1;
+}
+
+.sections li:not(:last-child):after {
+    content: "|";
+    margin-left: 20px;
+}
+
+.sections li:hover::before {
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.sections li:last-child {
+    margin-right: 0;
+    cursor: pointer;
+}
+
+.sections li:not(:last-child):after {
+    content: '';
+    margin: 0;
+}
+
+.clock {
+    flex: 1;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.light {
+    height: auto;
+    align-items: center;
+    margin-left: 2%;
+    cursor: pointer;
+    width: 15px;
+}
+
+
+
+.dark-mode header {
+    border-color: #191919;
+}
+
+.dark-mode .light {
+    filter: invert(1);
+}
+
+.dark-mode .sections li:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+
+
+@media (max-width: 1500px) {
+    header {
+        flex-direction: column;
+        padding-top: 30px;
+        padding-bottom: 3%;
+        margin-top: 0;
+        border-bottom: 1px solid #eeeeee;
+        gap: 10px;
+    }
+
+    .logo, .clock, .sections {
+        flex-basis: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .light {
+        margin-left: 10%;
+    }
+
+    .sections ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sections li {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .sections li:not(:last-child):after {
+        display: none;
+    }
+}

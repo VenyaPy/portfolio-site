@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import aboutData from "../assets/aboutData.js";
+import aboutData from "../../assets/Data/aboutData.js";
+import './About.css'
 
 
 export default function About() {
