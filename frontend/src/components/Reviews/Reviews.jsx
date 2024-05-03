@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 import './Reviews.css'
+import { motion } from 'framer-motion';
+
 
 
 export default function Reviews() {
@@ -12,17 +14,17 @@ export default function Reviews() {
     const [captchaValue, setCaptchaValue] = useState(null);
 
     useEffect(() => {
-        axios.get('http://127.0.0.1:5000/api/get_reviews')
+        axios.get('https://venyapopov.ru:8443/api/get_reviews')
             .then(response => {
                 setReviews(response.data);
             })
-            .catch(error => console.error('Error fatching reviews:', error));
-        }, []);
+            .catch(error => console.error('Error fetching reviews:', error));
+    }, []);
 
     const handleSubmit = (event) => {
         event.preventDefault();
         if (captchaValue) {
-            axios.post('http://127.0.0.1:5000/api/post_review', {username, text, img, recaptcha: captchaValue})
+            axios.post('https://venyapopov.ru:8443/api/post_review', { username, text, img, recaptcha: captchaValue })
                 .then(response => {
                     alert('Отзыв добавлен');
                     setReviews([...reviews, response.data]);
@@ -37,13 +39,18 @@ export default function Reviews() {
     };
 
     const onCaptchaChange = (value) => {
-        console.log("Captcha value:", value); // Отладка
+        console.log("Captcha value:", value);
         setCaptchaValue(value);
     };
 
-
-        return (
-        <div className="reviews-container">
+    return (
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className="reviews-container"
+        >
             <h1 className="reviews-title">Отзывы</h1>
             <ul className="reviews-list">
                 {reviews.map(review => (
@@ -79,15 +86,15 @@ export default function Reviews() {
                         onChange={e => setImg(e.target.value)}
                         placeholder="URL скриншота"
                     />
-                    <div className="capcha">
-                    <ReCAPTCHA
-                        sitekey="6LeIK8opAAAAABVHS4PIWU8yNxht447LK22B55k-"
-                        onChange={onCaptchaChange}
-                    /></div>
-
+                    <div className="captcha">
+                        <ReCAPTCHA
+                            sitekey="6LeIK8opAAAAABVHS4PIWU8yNxht447LK22B55k-"
+                            onChange={onCaptchaChange}
+                        />
+                    </div>
                     <button className="reviews-submit-button" type="submit">Отправить</button>
                 </form>
             </div>
-        </div>
-        );
+        </motion.div>
+    );
 }

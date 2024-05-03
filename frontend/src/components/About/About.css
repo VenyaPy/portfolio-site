@@ -12,16 +12,9 @@
 
 @media (max-width: 2000px) {
     .main {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 20px;
         margin-bottom: 5%;
-        }
     }
+}
 
 
 .photo-container {
@@ -44,6 +37,7 @@
 
 .content {
     max-width: 30%;
+    height: 800px;
     }
 
 .content h2, .content h3 {
@@ -58,6 +52,51 @@
     color: #191b1e;
     font-size: 1rem;
     }
+
+.fade-enter, .fade-exit-done {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+.fade-enter-active, .fade-enter-done {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 900ms, transform 900ms;
+}
+.fade-exit {
+    opacity: 1;
+}
+.fade-exit-active {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 900ms, transform 900ms;
+}
+
+.language-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+
+.language-buttons button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.language-buttons button:hover {
+    background-color: #367c39;
+    transform: scale(1.05);
+}
+
+.language-buttons button:active {
+    transform: scale(0.95);
+}
 
 
 @media (max-width: 1500px) {
@@ -82,6 +121,7 @@
         max-width: 90%;
         padding: 0.5rem;
         margin: 0 auto;
+        height: 900px;
     }
 }
 

@@ -76,9 +76,8 @@
         align-items: center;
         margin-bottom: 20px;
         padding: 12px;
-        background: #ffffff;
-        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
+        background: #f7f7f7;
+        border-radius: 0;
     }
 
     .contact-item img {
@@ -116,11 +115,9 @@
     }
 
     .dark-mode .contact-item {
-        background: #424242;
+        background: #222;
     }
 }
-
-
 
 .dark-mode .contact-container {
     background: #222;
@@ -142,7 +139,7 @@
 }
 
 .dark-mode .contact-item {
-    border-bottom: 1px solid #444;
+    border-bottom: 0;
 }
 
 .dark-mode .contact-container h1 {

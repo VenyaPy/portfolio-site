@@ -1,9 +1,17 @@
 import projectsData from "../../assets/Data/projectsData.js";
 import './Projects.css'
+import { motion } from 'framer-motion';
+
 
 export default function Projects() {
   return (
-    <div className="projects-container">
+    <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.5 }}
+        className="projects-container"
+    >
       {projectsData.map(project => (
         <a href={project.url} key={project.id} className="project-link">
           <div className="project">
@@ -15,6 +23,6 @@ export default function Projects() {
           </div>
         </a>
       ))}
-    </div>
+    </motion.div>
   );
 }

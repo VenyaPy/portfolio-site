@@ -10,7 +10,7 @@ const projectsData = [
     id: 2,
     title: "Сайт для просмотра кино",
     description: "Full Stack сайт для просмотра кино и сериалов, привязанный к телеграмм боту",
-    imageUrl: "https://i.ibb.co/CnK49fL/111111111.jpg",
+    imageUrl: "https://i.ibb.co/txCSbbr/DALL-E-2024-05-03-23-44-41-A-vibrant-illustration-featuring-a-red-background-with-a-movie-clapperboa.webp",
     url: "https://github.com/VenyaPy/fullstack-movie-site"
   },
 {
@@ -24,7 +24,7 @@ const projectsData = [
     id: 4,
     title: "Сайт портфолио",
     description: "Flask + ReactJS сайт для просмотра информации об авторе",
-    imageUrl: "https://i.ibb.co/RSqQ7h6/2024-04-28-23-17-36.png",
+    imageUrl: "https://i.ibb.co/4wqXZL5/photo-2024-05-03-01-40-19.jpg",
     url: "https://github.com/VenyaPy/portfolio-site"
 }
 ];

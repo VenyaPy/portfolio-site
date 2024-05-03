@@ -1,4 +1,25 @@
-/* Стили для экранов с разрешением более 2000px */
+
+.fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 900ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 900ms ease-out;
+}
+
+body {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+
 @media (min-width: 2000px) {
     html {
         font-size: 17px; /* Размер шрифта для крупных экранов */
@@ -37,10 +58,6 @@
 }
 
 
-body {
-      margin: 0;
-      line-height: 1.5;
-    }
 
 a {
   text-decoration: none; /* Убирает подчеркивание у всех ссылок */
