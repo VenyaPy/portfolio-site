@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 
-from backend.app.config import RECAPTCHA_SECRET_KEY
-from backend.app.database.models import db, Reviews
+from app.config import RECAPTCHA_SECRET_KEY
+from app.database.models import db, Reviews
 from flask_cors import CORS
 import requests
 

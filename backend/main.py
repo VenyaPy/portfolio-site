@@ -1,14 +1,14 @@
 from flask import Flask
-from backend.app.database.models import db
+from app.database.models import db
 from flask_cors import CORS
-from backend.app.models.reviews.router import reviews_bp
+from app.models.reviews.router import reviews_bp
 
 
 def create_app():
     app = Flask(__name__)
     CORS(app)
     app.config['SQLALCHEMY_DATABASE_URI'] = \
-        'sqlite:////home/venya/PycharmProjects/portfolio-git/backend/app/database/database.db'
+        'sqlite:////home/portfolio-site/backend/app/database/database.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     db.init_app(app)
